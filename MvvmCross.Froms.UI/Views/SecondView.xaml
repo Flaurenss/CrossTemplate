@@ -1,0 +1,16 @@
+﻿<views:MvxContentPage x:TypeArguments="viewModels:SecondViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:viewModels="clr-namespace:Template.Core.ViewModels;assembly=Template.Core"
+    x:Class="Template.Forms.UI.Views.SecondView"
+    Title="Second View">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="jaja" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</views:MvxContentPage>
