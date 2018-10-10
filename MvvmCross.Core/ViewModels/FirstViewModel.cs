@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Template.Core.ViewModels
 {
+    //https://www.youtube.com/watch?v=5nb8Mppv_Ck
     public class FirstViewModel : MvxViewModel
     {
         #region Properties
@@ -24,7 +25,7 @@ namespace Template.Core.ViewModels
         {
             _navigation = navigation;
 
-            StartButtonText = "Startttt";
+            StartButtonText = "Start";
             MainTitle = "Count Down";
             IconPath = "options_icon_toolbar.png";
 

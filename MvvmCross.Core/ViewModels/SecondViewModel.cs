@@ -1,4 +1,5 @@
 ﻿using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Template.Core.Helpers;
 
 namespace Template.Core.ViewModels
 {
@@ -17,11 +19,13 @@ namespace Template.Core.ViewModels
         public string ConfirmationButton { get; set; }
         public IMvxCommand ConfirmationCommand { get; set; }
 
-        private string _initialTime;
+        private int _initialTime;
         private string _message;
         private bool _isEnabled;
         private Color _messageColor;
-        public string InitialTime
+        private readonly IAppSettingsService _settings;
+
+        public int InitialTime
         {
             get => _initialTime;
             set
@@ -59,13 +63,14 @@ namespace Template.Core.ViewModels
         }
         #endregion
 
-        public SecondViewModel()
+        public SecondViewModel(IAppSettingsService settings)
         {
+            _settings = settings;
             ConfigTitle = "Configuration";
             Expltext = "Set initial seconds:";
             ConfirmationButton = "Set time";
             MessageIsEnabled = false;
-            InitialTime = "10";
+            InitialTime = _settings.GetInitialTime();
 
             ConfirmationCommand = new MvxCommand(async () => await SetInitialTime(InitialTime));
         }
@@ -75,10 +80,11 @@ namespace Template.Core.ViewModels
             await base.Initialize();
         }
 
-        public async Task SetInitialTime(string initialNum)
+        public async Task SetInitialTime(int initialNum)
         {
-            Regex regex = new Regex("^[1-9][0-9]*$");
-            if (!regex.IsMatch(initialNum))
+            //Maybe Symbology checkers can be deleted
+            var numToString = initialNum.ToString();
+            if (numToString.Contains(".") || numToString.Contains(","))
             {
                 MessageIsEnabled = true;
                 Message = "Please enter an integer number";
@@ -86,10 +92,11 @@ namespace Template.Core.ViewModels
             }
             else
             {
+                InitialTime = initialNum;
                 MessageIsEnabled = true;
-                Message = "Time set correctly";
+                Message = "Time set correctly to " + InitialTime;
                 MessageColor = Color.Green;
-                //TODO save time on app settings file
+                _settings.SetInitialTime(InitialTime);
             }
         }
     }

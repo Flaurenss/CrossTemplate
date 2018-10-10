@@ -1,4 +1,5 @@
-﻿using MvvmCross.ViewModels;
+﻿using MvvmCross.IoC;
+using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,13 @@ namespace Template.Core
     {
         public override void Initialize()
         {
+            CreatableTypes()
+                .EndingWith("Service")
+                .AsInterfaces()
+                .RegisterAsLazySingleton();
+
             //Some bootstraping code
+
             RegisterAppStart<FirstViewModel>();
         }
     }

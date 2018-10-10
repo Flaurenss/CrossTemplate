@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding Expltext}" />
-            <Entry Text="{Binding InitialTime}" />
+            <Entry Text="{Binding InitialTime, Mode=TwoWay}" Keyboard="Numeric"/>
             <Label Text="{Binding Message}" IsVisible="{Binding MessageIsEnabled}" TextColor="{Binding MessageColor}" />
             <Button Text="{Binding ConfirmationButton}" Command="{Binding ConfirmationCommand}" />
         </StackLayout>
