@@ -6,11 +6,15 @@
     xmlns:viewModels="clr-namespace:Template.Core.ViewModels;assembly=Template.Core"
     x:Class="Template.Forms.UI.Views.FirstView"
     Title="{Binding MainTitle}">
-    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="{Binding IconPath}" Command="{Binding OptionCommand}" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Hello Xamarin" />
-            <Button Text="{Binding ButtonText}" Command="{Binding ButtonCommand}"/>
+            <Button Text="{Binding StartButtonText}" Command="{Binding StartCommand}"/>
+            <!--<Button Text="{Binding PauseButtonText}" Command="{Binding PauseCommand}"/>
+            <Button Text="{Binding ResetButtonText}" Command="{Binding ResetCommand}"/>-->
         </StackLayout>
     </ContentPage.Content>
     

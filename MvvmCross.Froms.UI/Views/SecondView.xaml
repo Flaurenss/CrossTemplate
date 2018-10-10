@@ -5,11 +5,14 @@
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:viewModels="clr-namespace:Template.Core.ViewModels;assembly=Template.Core"
     x:Class="Template.Forms.UI.Views.SecondView"
-    Title="Second View">
+    Title="{Binding ConfigTitle}">
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="jaja" />
+            <Label Text="{Binding Expltext}" />
+            <Entry Text="{Binding InitialTime}" />
+            <Label Text="{Binding Message}" IsVisible="{Binding MessageIsEnabled}" TextColor="{Binding MessageColor}" />
+            <Button Text="{Binding ConfirmationButton}" Command="{Binding ConfirmationCommand}" />
         </StackLayout>
     </ContentPage.Content>
 

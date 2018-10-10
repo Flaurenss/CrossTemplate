@@ -12,8 +12,10 @@ namespace Template.Core.ViewModels
     {
         #region Properties
         public string MainTitle { get; set; }
-        public string ButtonText { get; set; }
+        public string IconPath { get; set; }
+        public string StartButtonText { get; set; }
         public IMvxCommand ButtonCommand { get; set; }
+        public IMvxCommand OptionCommand { get; set; }
 
         private readonly IMvxNavigationService _navigation;
         #endregion
@@ -22,16 +24,13 @@ namespace Template.Core.ViewModels
         {
             _navigation = navigation;
 
-            MainTitle = "Demo";
-            ButtonText = "Next View";
+            StartButtonText = "Startttt";
+            MainTitle = "Count Down";
+            IconPath = "options_icon_toolbar.png";
 
-            ButtonCommand = new MvxCommand(async ()=> await GoToPage());
+            OptionCommand = new MvxCommand(async ()=> await _navigation.Navigate<SecondViewModel>());
         }
 
-        public async Task GoToPage()
-        {
-            await _navigation.Navigate<SecondViewModel>();
-        }
 
         public override async Task Initialize()
         {
