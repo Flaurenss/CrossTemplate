@@ -1,10 +1,10 @@
-﻿<views:MvxContentPage x:TypeArguments="viewModels:FirstViewModel"
+﻿<views:MvxContentPage x:TypeArguments="viewModels:CountDownViewModel"
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:viewModels="clr-namespace:Template.Core.ViewModels;assembly=Template.Core"
-    x:Class="Template.Forms.UI.Views.FirstView"
+    x:Class="Template.Forms.UI.Views.CountDownView"
     Title="{Binding MainTitle}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="{Binding IconPath}" Command="{Binding OptionCommand}" />

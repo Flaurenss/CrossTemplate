@@ -10,7 +10,7 @@ using Template.Core.Helpers;
 
 namespace Template.Core.ViewModels
 {
-    public class FirstViewModel : MvxViewModel
+    public class CountDownViewModel : MvxViewModel
     {
         #region Properties
         public bool Timer { get; set; }
@@ -38,7 +38,7 @@ namespace Template.Core.ViewModels
         private readonly IAppSettingsService _settings;
         #endregion
 
-        public FirstViewModel(IMvxNavigationService navigation, IAppSettingsService settings)
+        public CountDownViewModel(IMvxNavigationService navigation, IAppSettingsService settings)
         {
             _navigation = navigation;
             _settings = settings;
@@ -52,7 +52,7 @@ namespace Template.Core.ViewModels
 
             InitialTime = _settings.GetInitialTime();
             ChronoTime = InitialTime;
-            OptionCommand = new MvxCommand(async ()=> await _navigation.Navigate<SecondViewModel>());
+            OptionCommand = new MvxCommand(async ()=> await _navigation.Navigate<ConfigurationViewModel>());
             StartCommand = new MvxCommand(async ()=> await StartCountDown());
             PauseCommand = new MvxCommand(() => PauseCountDown());
             ResetCommand = new MvxCommand(() => ResetCountDown());
@@ -79,6 +79,7 @@ namespace Template.Core.ViewModels
                     }
                     catch
                     {
+                        
                         //super easy error handling
                     }
                     await Task.Delay(TimeSpan.FromSeconds(1));

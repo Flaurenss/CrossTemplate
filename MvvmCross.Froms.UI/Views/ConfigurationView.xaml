@@ -1,11 +1,11 @@
-﻿<views:MvxContentPage x:TypeArguments="viewModels:SecondViewModel"
+﻿<views:MvxContentPage x:TypeArguments="viewModels:ConfigurationViewModel"
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:viewModels="clr-namespace:Template.Core.ViewModels;assembly=Template.Core"
     xmlns:helpers="clr-namespace:Template.Forms.UI.Custom"
-    x:Class="Template.Forms.UI.Views.SecondView"
+    x:Class="Template.Forms.UI.Views.ConfigurationView"
     Title="{Binding ConfigTitle}">
 
     <ContentPage.Content>

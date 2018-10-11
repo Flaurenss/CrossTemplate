@@ -18,7 +18,7 @@ namespace Template.Core
 
             //Some bootstraping code
 
-            RegisterAppStart<FirstViewModel>();
+            RegisterAppStart<CountDownViewModel>();
         }
     }
 }

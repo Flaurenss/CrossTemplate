@@ -11,7 +11,7 @@ using Template.Core.Helpers;
 
 namespace Template.Core.ViewModels
 {
-    public class SecondViewModel : MvxViewModel
+    public class ConfigurationViewModel : MvxViewModel
     {
         #region Properties
         public string ConfigTitle { get; set; }
@@ -63,7 +63,7 @@ namespace Template.Core.ViewModels
         }
         #endregion
 
-        public SecondViewModel(IAppSettingsService settings)
+        public ConfigurationViewModel(IAppSettingsService settings)
         {
             _settings = settings;
             ConfigTitle = "Configuration";

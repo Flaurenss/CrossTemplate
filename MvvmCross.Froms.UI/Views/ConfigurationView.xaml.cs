@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 
 namespace Template.Forms.UI.Views
 {
-	public partial class SecondView : MvxContentPage<SecondViewModel>
+	public partial class ConfigurationView : MvxContentPage<ConfigurationViewModel>
     {
-		public SecondView ()
+		public ConfigurationView()
 		{
 			InitializeComponent ();
 		}

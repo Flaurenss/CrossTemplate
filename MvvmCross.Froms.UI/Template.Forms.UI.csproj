@@ -15,8 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\FirstView.xaml.cs">
-      <DependentUpon>FirstView.xaml</DependentUpon>
+    <Compile Update="Views\CountDownView.xaml.cs">
+      <DependentUpon>CountDownView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ConfigurationView.xaml.cs">
+      <DependentUpon>ConfigurationView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -24,10 +27,10 @@
     <EmbeddedResource Update="FormsApp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FirstView.xaml">
+    <EmbeddedResource Update="Views\CountDownView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SecondView.xaml">
+    <EmbeddedResource Update="Views\ConfigurationView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
