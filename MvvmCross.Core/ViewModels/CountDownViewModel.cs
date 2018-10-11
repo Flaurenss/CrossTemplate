@@ -75,11 +75,17 @@ namespace Template.Core.ViewModels
                 {
                     try
                     {
-                        ChronoTime--;
+                        if(ChronoTime == 0)
+                        {
+                            Timer = false;
+                        }
+                        else
+                        {
+                            ChronoTime--;
+                        }
                     }
-                    catch
+                    catch(Exception ex)
                     {
-                        
                         //super easy error handling
                     }
                     await Task.Delay(TimeSpan.FromSeconds(1));
@@ -92,6 +98,7 @@ namespace Template.Core.ViewModels
             base.ViewAppearing();
             Timer = false;
             InitialTime = _settings.GetInitialTime();
+            ChronoTime = InitialTime;
         }
 
         public override async Task Initialize()

@@ -4,7 +4,7 @@
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:viewModels="clr-namespace:Template.Core.ViewModels;assembly=Template.Core"
-    xmlns:helpers="clr-namespace:Template.Forms.UI.Custom"
+    xmlns:helpers="clr-namespace:Template.Core.Custom;assembly=Template.Core"
     x:Class="Template.Forms.UI.Views.ConfigurationView"
     Title="{Binding ConfigTitle}">
 

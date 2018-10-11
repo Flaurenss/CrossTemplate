@@ -14,7 +14,7 @@ namespace Template.Forms.UI.Views
     {
 		public ConfigurationView()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 	}
 }
