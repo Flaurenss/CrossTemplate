@@ -72,7 +72,7 @@ namespace Template.Core.ViewModels
             MessageIsEnabled = false;
             InitialTime = _settings.GetInitialTime();
 
-            ConfirmationCommand = new MvxCommand(async () => await SetInitialTime(InitialTime));
+            ConfirmationCommand = new MvxCommand(() => SetInitialTime(InitialTime));
         }
 
         public override async Task Initialize()
@@ -80,14 +80,16 @@ namespace Template.Core.ViewModels
             await base.Initialize();
         }
 
-        public async Task SetInitialTime(int initialNum)
+        public void SetInitialTime(int initialNum)
         {
             //Maybe Symbology checkers can be deleted
             var numToString = initialNum.ToString();
-            if (numToString.Contains(".") || numToString.Contains(","))
+            var tmp1 = numToString.Contains(",");
+
+            if (initialNum == 0)
             {
                 MessageIsEnabled = true;
-                Message = "Please enter an integer number";
+                Message = "Please enter an integer number different from 0";
                 MessageColor = Color.Red;
             }
             else

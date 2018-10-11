@@ -11,10 +11,11 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello Xamarin" />
+            <Label Text="{Binding ChronoTime, Mode=TwoWay}" HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand" FontSize="20"/>
             <Button Text="{Binding StartButtonText}" Command="{Binding StartCommand}"/>
-            <!--<Button Text="{Binding PauseButtonText}" Command="{Binding PauseCommand}"/>
-            <Button Text="{Binding ResetButtonText}" Command="{Binding ResetCommand}"/>-->
+            <Button Text="{Binding PauseButtonText}" Command="{Binding PauseCommand}"/>
+            <Button Text="{Binding ResetButtonText}" Command="{Binding ResetCommand}"/>
         </StackLayout>
     </ContentPage.Content>
     

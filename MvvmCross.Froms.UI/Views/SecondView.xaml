@@ -4,13 +4,22 @@
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:viewModels="clr-namespace:Template.Core.ViewModels;assembly=Template.Core"
+    xmlns:helpers="clr-namespace:Template.Forms.UI.Custom"
     x:Class="Template.Forms.UI.Views.SecondView"
     Title="{Binding ConfigTitle}">
 
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding Expltext}" />
-            <Entry Text="{Binding InitialTime, Mode=TwoWay}" Keyboard="Numeric"/>
+            <Entry Keyboard="Numeric" Text="{Binding InitialTime, Mode=TwoWay}">
+                <Entry.Triggers>
+                    <EventTrigger Event="TextChanged">
+                        <helpers:ValidationTriggerAction />
+                    </EventTrigger>
+                </Entry.Triggers>
+            </Entry>
+            
+            
             <Label Text="{Binding Message}" IsVisible="{Binding MessageIsEnabled}" TextColor="{Binding MessageColor}" />
             <Button Text="{Binding ConfirmationButton}" Command="{Binding ConfirmationCommand}" />
         </StackLayout>
