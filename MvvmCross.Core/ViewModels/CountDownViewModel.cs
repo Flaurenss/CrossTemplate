@@ -71,7 +71,7 @@ namespace Template.Core.ViewModels
         public async Task StartCountDown()
         {
             Timer = true;
-            var task2 = Task.Run(async () =>
+            await Task.Run(async () =>
             {
                 while (Timer)
                 {
