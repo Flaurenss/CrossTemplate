@@ -1,27 +1,44 @@
 ﻿using System;
+using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using MvvmCross.Tests;
 using Template.Core.Helpers;
 using Template.Core.ViewModels;
 
-namespace UnitTestProject1
+namespace Template.Test
 {
     [TestClass]
-    public class ConfigurationTests
+    public class ConfigurationTests : MvxIoCSupportingTest
     {
         [TestMethod]
-        public void TestSetInitialTime()
+        public void TestSetInitialTimeCorrectly()
         {
+            Setup();
             //Arrange
             int TimeToSet = 10;
             var settingsService = new Mock<IAppSettingsService>();
-            settingsService.Setup(x => x.GetInitialTime()).Returns(TimeToSet);
-            var _settings = settingsService.Object;
+            settingsService.Setup(x => x.GetInitialTime()).Returns(10);
+            var vm = new ConfigurationViewModel(settingsService.Object);
             //Act
-            _settings.SetInitialTime(TimeToSet);
-            var time = _settings.GetInitialTime();
+            vm.ConfirmationCommand.Execute();
             //Assert
-            Assert.AreEqual(TimeToSet, time);
+            Assert.IsTrue(vm.InitialTime==TimeToSet);
+            Assert.IsTrue(vm.MessageColor == Color.Green);
+        }
+        [TestMethod]
+        public void TestSetInitialTimeIncorrectly()
+        {
+            Setup();
+            //Arrange
+            int TimeToSet = 0;
+            var settingsService = new Mock<IAppSettingsService>();
+            settingsService.Setup(x => x.GetInitialTime()).Returns(10);
+            var vm = new ConfigurationViewModel(settingsService.Object);
+            //Act
+            vm.ConfirmationCommand.Execute(TimeToSet);
+            //Assert
+            Assert.IsTrue(vm.InitialTime != TimeToSet);
         }
     }
 }

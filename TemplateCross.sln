@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.Forms.UI", "MvvmCr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Forms.Droid", "Template.Forms.Droid\Template.Forms.Droid.csproj", "{377D9C14-457F-4A1E-ACE6-9F8C64FF9DD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{75318A43-22EC-4D79-9ED9-91B48D017CD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Test", "UnitTestProject1\Template.Test.csproj", "{75318A43-22EC-4D79-9ED9-91B48D017CD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
