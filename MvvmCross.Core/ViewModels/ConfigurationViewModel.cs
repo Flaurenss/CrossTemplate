@@ -82,11 +82,7 @@ namespace Template.Core.ViewModels
 
         public void SetInitialTime(int initialNum)
         {
-            //Maybe Symbology checkers can be deleted
-            var numToString = initialNum.ToString();
-            var tmp1 = numToString.Contains(",");
-
-            if (initialNum == 0)
+            if (initialNum == 0 || initialNum.ToString() == null || initialNum.ToString().Contains(","))
             {
                 MessageIsEnabled = true;
                 Message = "Please enter an integer number different from 0";

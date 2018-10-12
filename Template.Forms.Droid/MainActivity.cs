@@ -8,6 +8,7 @@ using MvvmCross.Forms.Platforms.Android.Core;
 using Template.Core;
 using Template.Forms.UI;
 using Android.Content.PM;
+using Acr.UserDialogs;
 
 namespace Template.Forms.Droid
 {
@@ -26,6 +27,7 @@ namespace Template.Forms.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            UserDialogs.Init(this);
             base.OnCreate(bundle);
 
         }

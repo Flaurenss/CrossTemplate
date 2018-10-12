@@ -1,4 +1,5 @@
-﻿using MvvmCross.Commands;
+﻿using Acr.UserDialogs;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
@@ -36,13 +37,14 @@ namespace Template.Core.ViewModels
         }
         private readonly IMvxNavigationService _navigation;
         private readonly IAppSettingsService _settings;
+        private readonly IUserDialogs _dialogs;
         #endregion
 
-        public CountDownViewModel(IMvxNavigationService navigation, IAppSettingsService settings)
+        public CountDownViewModel(IMvxNavigationService navigation, IAppSettingsService settings, IUserDialogs dialogs)
         {
             _navigation = navigation;
             _settings = settings;
-
+            _dialogs = dialogs;
             Timer = false;
             StartButtonText = "Start";
             PauseButtonText = "Pause";
@@ -73,24 +75,17 @@ namespace Template.Core.ViewModels
             {
                 while (Timer)
                 {
-                    try
+                    if (ChronoTime == 0)
                     {
-                        if(ChronoTime == 0)
-                        {
-                            Timer = false;
-                        }
-                        else
-                        {
-                            ChronoTime--;
-                        }
+                        Timer = false;
                     }
-                    catch(Exception ex)
+                    else
                     {
-                        //super easy error handling
+                        ChronoTime--;
                     }
                     await Task.Delay(TimeSpan.FromSeconds(1));
                 }
-            });
+            });   
         }
 
         public override void ViewAppearing()

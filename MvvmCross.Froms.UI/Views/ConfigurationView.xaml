@@ -11,15 +11,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding Expltext}" />
-            <Entry Keyboard="Numeric" Text="{Binding InitialTime, Mode=TwoWay}">
-                <Entry.Triggers>
-                    <EventTrigger Event="TextChanged">
-                        <helpers:ValidationTriggerAction />
-                    </EventTrigger>
-                </Entry.Triggers>
-            </Entry>
-            
-            
+            <Entry Keyboard="Numeric" Text="{Binding InitialTime, Mode=TwoWay}" />
             <Label Text="{Binding Message}" IsVisible="{Binding MessageIsEnabled}" TextColor="{Binding MessageColor}" />
             <Button Text="{Binding ConfirmationButton}" Command="{Binding ConfirmationCommand}" />
         </StackLayout>
