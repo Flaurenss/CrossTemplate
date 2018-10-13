@@ -1,5 +1,4 @@
-﻿using Acr.UserDialogs;
-using MvvmCross.Commands;
+﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
@@ -37,14 +36,12 @@ namespace Template.Core.ViewModels
         }
         private readonly IMvxNavigationService _navigation;
         private readonly IAppSettingsService _settings;
-        private readonly IUserDialogs _dialogs;
         #endregion
 
-        public CountDownViewModel(IMvxNavigationService navigation, IAppSettingsService settings, IUserDialogs dialogs)
+        public CountDownViewModel(IMvxNavigationService navigation, IAppSettingsService settings)
         {
             _navigation = navigation;
             _settings = settings;
-            _dialogs = dialogs;
             Timer = false;
             StartButtonText = "Start";
             PauseButtonText = "Pause";

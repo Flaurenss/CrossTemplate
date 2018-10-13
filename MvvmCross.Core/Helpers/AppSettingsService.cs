@@ -14,7 +14,7 @@ namespace Template.Core.Helpers
 
         public void SetInitialTime(int time)
         {
-            Plugin.Settings.CrossSettings.Current.AddOrUpdateValue("initial-time",time);
+            Plugin.Settings.CrossSettings.Current.AddOrUpdateValue("initial-time", time);
         }
     }
 }

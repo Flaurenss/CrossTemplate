@@ -1,5 +1,4 @@
-﻿using Acr.UserDialogs;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using MvvmCross.Navigation;
 using MvvmCross.Tests;
@@ -23,10 +22,9 @@ namespace Template.Test
             //Arrange
             var settingsService = new Mock<IAppSettingsService>();
             var navigation = new Mock<IMvxNavigationService>();
-            var userDialog = new Mock<IUserDialogs>();
             settingsService.Setup(x => x.GetInitialTime()).Returns(10);
             //Act
-            var vm = new CountDownViewModel(navigation.Object, settingsService.Object, userDialog.Object);
+            var vm = new CountDownViewModel(navigation.Object, settingsService.Object);
             vm.StartCountDown().Wait();
             //Assert
             Assert.IsTrue(vm.Timer == false);
@@ -39,10 +37,9 @@ namespace Template.Test
             //Arrange
             var settingsService = new Mock<IAppSettingsService>();
             var navigation = new Mock<IMvxNavigationService>();
-            var userDialog = new Mock<IUserDialogs>();
             settingsService.Setup(x => x.GetInitialTime()).Returns(10);
             //Act
-            var vm = new CountDownViewModel(navigation.Object, settingsService.Object, userDialog.Object);
+            var vm = new CountDownViewModel(navigation.Object, settingsService.Object);
             vm.StartCountDown().Wait();
             Assert.AreEqual(vm.ChronoTime, 0);
             vm.ResetCountDown();
@@ -56,10 +53,9 @@ namespace Template.Test
             //Arrange
             var settingsService = new Mock<IAppSettingsService>();
             var navigation = new Mock<IMvxNavigationService>();
-            var userDialog = new Mock<IUserDialogs>();
             settingsService.Setup(x => x.GetInitialTime()).Returns(10);
             //Act
-            var vm = new CountDownViewModel(navigation.Object, settingsService.Object, userDialog.Object);
+            var vm = new CountDownViewModel(navigation.Object, settingsService.Object);
             vm.StartCountDown();
             Assert.IsTrue(vm.ChronoTime == vm.ChronoTime--);
             Assert.IsTrue(vm.Timer == true);

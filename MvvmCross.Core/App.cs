@@ -1,5 +1,4 @@
-﻿using Acr.UserDialogs;
-using MvvmCross;
+﻿using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
 using System;
@@ -19,7 +18,6 @@ namespace Template.Core
                 .RegisterAsLazySingleton();
 
             //Some bootstraping code
-            Mvx.RegisterSingleton(() => UserDialogs.Instance);
             RegisterAppStart<CountDownViewModel>();
         }
     }
