@@ -11,7 +11,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding Expltext}" />
-            <Entry Keyboard="Numeric" Text="{Binding InitialTime, Mode=TwoWay}" />
+            <Entry Keyboard="Numeric" Text="{Binding InitialTime, Mode=TwoWay}" MaxLength="9"/>
             <Label Text="{Binding Message}" IsVisible="{Binding MessageIsEnabled}" TextColor="{Binding MessageColor}" />
             <Button Text="{Binding ConfirmationButton}" Command="{Binding ConfirmationCommand}" />
         </StackLayout>

@@ -12,7 +12,7 @@ using Android.Content.PM;
 namespace Template.Forms.Droid
 {
     [Activity(
-        Label = "Template",
+        Label = "CountDown",
         Theme = "@style/AppTheme",
         MainLauncher = false,
         LaunchMode = LaunchMode.SingleTask,

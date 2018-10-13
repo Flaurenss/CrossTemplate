@@ -18,17 +18,13 @@ using Template.Forms.UI;
 namespace Template.Forms.Droid
 {
     [Activity(
-        Label = "Template",
+        Label = "CountDown",
         Theme = "@style/SplashScreen",
         MainLauncher = true, 
         NoHistory = true,
-        Icon = "@drawable/icon")]
+        Icon = "@drawable/icon_chrono")]
     public class SplashScreen : MvxFormsSplashScreenActivity<Setup, App, FormsApp>
     {
-        //public SplashScreen()
-        //    : base(Resource.Layout.SplashScreen)
-        //{
-        //}
         protected override Task RunAppStartAsync(Bundle bundle)
         {
             StartActivity(typeof(MainActivity));

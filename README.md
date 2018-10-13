@@ -17,8 +17,8 @@ There are a few test that are focused on testing the basics of the application (
 
 ## Deployment
 
-In order to deploy the solution install the apk attached or generate a new one through this project.
-(iOS project ins't attached due that I was unable to test the application for iOS; if it's needed please make me know and I will attached as soon as possible.
+In order to deploy the solution you can test through vs or feel free to generate a new apk.
+(iOS project isn't attached due that I was unable to test the application for iOS; if it's needed please make me know and I will attached as soon as possible.
 
 ## Built With
 
