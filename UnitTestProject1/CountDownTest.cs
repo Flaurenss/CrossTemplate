@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Template.Core.Helpers;
 using Template.Core.ViewModels;
 
-namespace UnitTestProject1
+namespace Template.Test
 {
     [TestClass]
     public class CountDownTest : MvxIoCSupportingTest
@@ -47,7 +47,25 @@ namespace UnitTestProject1
             Assert.AreEqual(vm.ChronoTime, 0);
             vm.ResetCountDown();
             //Assert
-            Assert.AreEqual(vm.ChronoTime,10);
+            Assert.AreEqual(vm.ChronoTime,vm.InitialTime);
+        }
+        [TestMethod]
+        public void TestPauseCountdown()
+        {
+            Setup();
+            //Arrange
+            var settingsService = new Mock<IAppSettingsService>();
+            var navigation = new Mock<IMvxNavigationService>();
+            var userDialog = new Mock<IUserDialogs>();
+            settingsService.Setup(x => x.GetInitialTime()).Returns(10);
+            //Act
+            var vm = new CountDownViewModel(navigation.Object, settingsService.Object, userDialog.Object);
+            vm.StartCountDown();
+            Assert.IsTrue(vm.ChronoTime == vm.ChronoTime--);
+            Assert.IsTrue(vm.Timer == true);
+            vm.PauseCountDown();
+            //Assert
+            Assert.IsTrue(vm.Timer == false);
         }
     }
 }
