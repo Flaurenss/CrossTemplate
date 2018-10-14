@@ -15,16 +15,6 @@ namespace Template.Core.CustomTrigger
                 entry.Text = "0";
                 return;
             }
-            //int n;
-            //var isNumeric = int.TryParse(entry.Text, out n);
-
-            //if (!string.IsNullOrWhiteSpace(entry.Text) && (entry.Text.Length > 9 || !isNumeric))
-            //{
-            //    entry.Text = _prevValue;
-            //    return;
-            //}
-
-            //_prevValue = entry.Text;
         }
     }
 }
