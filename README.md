@@ -23,7 +23,7 @@ In order to deploy the solution you can test through vs or feel free to generate
 ## Built With
 
 * [MvvmCross](https://www.mvvmcross.com/) - The MVVM framework used
-* [Moq](https://www.nuget.org/packages/moq/) - Mocking framweork fro UTest
+* [Moq](https://www.nuget.org/packages/moq/) - Mocking framweork for UTest
 * [Xam.Plugin.Settings](https://github.com/jamesmontemagno/SettingsPlugin) - Cross Platfrom Settings (used to save the initial countdown time)
 
 
